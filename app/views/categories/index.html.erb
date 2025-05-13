@@ -1,0 +1,7 @@
+<h1>All Categories</h1>
+<ul>
+  <% @categories.each do |cat| %>
+    <li><%= link_to cat.name, category_path(cat) %></li>
+  <% end %>
+</ul>
+<%= link_to 'New Category', new_category_path, class: 'btn' %>

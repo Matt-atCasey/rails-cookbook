@@ -1,0 +1,14 @@
+<h1><%= @category.name %></h1>
+<h2>Recipes in this category:</h2>
+<ul>
+  <% @category.bookmarks.each do |bookmark| %>
+    <li>
+      <%= link_to bookmark.recipe.name,
+                  category_recipe_path(@category, bookmark.recipe) %>
+      – <em><%= bookmark.comment %></em>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a recipe', new_category_bookmark_path(@category),
+            class: 'btn' %>

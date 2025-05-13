@@ -1,0 +1,12 @@
+<h1>Add a Recipe to “<%= @category.name %>”</h1>
+
+<%= simple_form_for [@category, @bookmark] do |f| %>
+  <%= f.input :recipe_id,
+        collection: Recipe.all,
+        label_method: :name,
+        value_method: :id,
+        prompt: 'Select a recipe' %>
+
+  <%= f.input :comment, hint: 'must be at least 6 characters.' %>
+  <%= f.button :submit, 'Add to category' %>
+<% end %>

@@ -1,0 +1,5 @@
+<h1><%= @recipe.name %></h1>
+<%= image_tag @recipe.image_url, alt: @recipe.name if @recipe.image_url.present? %>
+<p><%= @recipe.description %></p>
+<p>RATING: <%= @recipe.rating %></p>
+<%= link_to 'Back to category', category_path(@category) %>
